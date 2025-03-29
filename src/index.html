@@ -6,7 +6,43 @@
     <title>Document</title>
     <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">hello world</h1>
+  <body class="bg-[#0f151a]">
+    <h1
+      class="bg-[#1e2934] text-[#40916c] h-15 text-3xl font-bold text-center font-serif"
+    >
+      Weather Forecast
+    </h1>
+    <div class="text-white m-3 flex flex-col space-y-2">
+      <h2 class="text-2xl underline my-4">Check Weather</h2>
+      <label for="cityName" class="text-white">Enter your City Name</label>
+      <input
+        type="text"
+        id="cityName"
+        class="border bg-white rounded-lg p-2 text-black focus:outline-none focus:ring-2 focus:ring-[#40916c]"
+        placeholder="Enter your city name"
+      />
+      <select id="recentCities" class="p-2 border rounded-md hidden w-64">
+        <option value="" disabled selected>Select a city</option>
+      </select>
+      <button
+        onclick="getWeather()"
+        class="m-4 h-10 bg-[#40916c] text-xl hover:bg-[#2e4f40]"
+      >
+        Search
+      </button>
+      <hr />
+      <button
+        onclick="getWeatherByCurrentLocation()"
+        class="m-4 h-10 bg-gray-500 text-xl hover:bg-black"
+      >
+        Use Current location
+      </button>
+    </div>
+    <div
+      id="weatherResult"
+      class="text-white flex flex-col justify-center items-center"
+    ></div>
+
+    <script src="script.js"></script>
   </body>
 </html>
