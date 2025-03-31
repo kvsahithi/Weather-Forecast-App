@@ -23,7 +23,7 @@
         placeholder="Enter your city name"
       />
       <div id="recentDropdown" class="hidden">
-        <ul id="recentCitiesList" class="bg-white m-0"></ul>
+        <ul id="recentCitiesList" class="bg-white"></ul>
       </div>
       <button
         onclick="getWeather()"
@@ -42,6 +42,10 @@
     <div
       id="weatherResult"
       class="text-white flex flex-col justify-center items-center"
+    ></div>
+    <div
+      id="forecastResult"
+      class="flex flex-col text-white items-center gap-6"
     ></div>
 
     <script src="script.js"></script>
