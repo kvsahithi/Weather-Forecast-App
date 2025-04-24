@@ -5,47 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="output.css" />
+    <link rel="icon" href="images.png" />
   </head>
   <body class="bg-[#0f151a]">
     <h1
-      class="bg-[#1e2934] text-[#40916c] h-15 text-3xl font-bold text-center font-serif"
+      class="bg-[#1e2934] text-[#40916c] h-18 text-3xl md:text-5xl lg:text-6xl font-bold text-center font-serif flex items-center justify-center"
     >
       Weather Forecast
     </h1>
-    <div class="text-white m-3 flex flex-col space-y-2">
-      <h2 class="text-2xl underline my-4">Check Weather</h2>
-      <label for="cityName" class="text-white">Enter your City Name</label>
+    <div class="flex flex-col lg:flex-row lg:justify-evenly md:text-2xl">
+      <div
+        class="text-white flex flex-col space-y-4 md:space-y-5 lg:space-y-6 mt-7 mb-7 ml-5 mr-5 lg:w-100 xl:w-150"
+      >
+        <h2 class="text-3xl md:text-4xl underline my-4">Check Weather</h2>
+        <label for="cityName" class="text-white">Enter your City Name</label>
 
-      <input
-        type="text"
-        id="cityName"
-        class="border bg-white block w-full rounded-lg p-2 text-black focus:outline-none focus:ring-2 focus:ring-[#40916c]"
-        placeholder="Enter your city name"
-      />
-      <div id="recentDropdown" class="hidden">
-        <ul id="recentCitiesList" class="bg-white"></ul>
+        <input
+          type="text"
+          id="cityName"
+          class="border bg-white rounded-lg p-2 lg:mb-0 text-black focus:outline-none focus:ring-2 focus:ring-[#40916c]"
+          placeholder="Enter your city name"
+        />
+        <div id="recentDropdown" class="hidden">
+          <ul id="recentCitiesList" class="bg-white"></ul>
+        </div>
+        <button
+          onclick="getWeather()"
+          class="h-10 bg-[#40916c] p-2 text-xl mt-5 hover:bg-[#2e4f40] md:text-2xl md:h-14"
+        >
+          Search
+        </button>
+        <hr />
+        <button
+          onclick="getWeatherByCurrentLocation()"
+          class="h-10 bg-gray-500 text-xl block-w-full hover:bg-black md:text-2xl md:h-14"
+        >
+          Use Current location
+        </button>
       </div>
-      <button
-        onclick="getWeather()"
-        class="m-4 h-10 bg-[#40916c] text-xl hover:bg-[#2e4f40]"
-      >
-        Search
-      </button>
-      <hr />
-      <button
-        onclick="getWeatherByCurrentLocation()"
-        class="m-4 h-10 bg-gray-500 text-xl hover:bg-black"
-      >
-        Use Current location
-      </button>
+      <div
+        id="weatherResult"
+        class="text-white flex flex-col justify-center items-center transition-opacity duration-700 opacity-0"
+      ></div>
     </div>
     <div
-      id="weatherResult"
-      class="text-white flex flex-col justify-center items-center"
-    ></div>
-    <div
       id="forecastResult"
-      class="flex flex-col text-white items-center gap-6"
+      class="flex flex-wrap text-white justify-center gap-6 text-2xl translate-y-5 transition-all duration-700 opacity-0"
     ></div>
 
     <script src="script.js"></script>
