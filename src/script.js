@@ -193,7 +193,7 @@ function displayForecast(data) {
   });
 
   // Render forecast cards
-  forecastResult.innerHTML = `<div class="w-full text-center"><h2 class="text-2xl md:text-4xl underline text-white font-bold my-4">5-day forecast</h2></div>`;
+  forecastResult.innerHTML = `<div class="w-full text-center"><h2 class="text-3xl md:text-4xl underline text-white font-bold my-4">5-day forecast</h2></div>`;
   let forecastHTML = "";
   forecastData.forEach((forecast) => {
     let icon = `https://openweathermap.org/img/wn/${forecast.iconCode}@4x.png`;
